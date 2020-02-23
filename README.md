@@ -13,7 +13,7 @@ Aplicacion lunchDrone para corrientazo a domicilio
         │       Initializer.java
         │       LunchDroneApplication.java		#main
         │
-        ├───domain								#dominio
+        ├───domain	#dominio
         │       Coordinate.java
         │       Drone.java
         │       Position.java
