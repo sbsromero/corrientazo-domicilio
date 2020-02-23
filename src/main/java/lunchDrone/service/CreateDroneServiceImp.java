@@ -34,9 +34,8 @@ public class CreateDroneServiceImp implements CreateDroneService {
 
 	@Override
 	public void setDeliveryRoute() throws DataException {
-		int index = 0;
 		for (Drone drone : avaliableDrones) {
-			loadInformation.loadInformation(drone, ++index);
+			loadInformation.loadInformation(drone, Integer.parseInt(drone.getIdDrone()));
 		}
 	}
 

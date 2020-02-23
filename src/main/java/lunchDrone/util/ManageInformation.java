@@ -12,7 +12,7 @@ import lunchDrone.service.LoadRouteMapServiceImp;
 public class ManageInformation {
 
 	protected LoadRouteMapService loadRouteMapService;
-	private static final String FILE_INPUT = "/input/";
+	private static final String FILE_INPUT = "src/main/resources/input/";
 	private static final String FILE_OUTPUT = "src/main/resources/output/";
 
 	public ManageInformation() {
