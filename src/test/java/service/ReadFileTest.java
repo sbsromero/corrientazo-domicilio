@@ -21,8 +21,6 @@ public class ReadFileTest {
 			drone.setIdDrone("1");
 			
 			ManageInformation manageInformation = new ManageInformation();
-
-//			String path = "src/test/resources/wrongInput/init0" + drone.getIdDrone() + ".txt";
 			String path = "src/test/resources/wrongInput/";
 			manageInformation.setFileInput(path);
 			manageInformation.loadInformation(drone);

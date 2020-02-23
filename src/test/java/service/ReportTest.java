@@ -16,6 +16,8 @@ import lunchDrone.util.ManageInformation;
 
 public class ReportTest {
 
+	private final String MESSAGE = "Exception no expected";
+
 	@Test
 	public void reportDrone() {
 		try {
@@ -27,7 +29,7 @@ public class ReportTest {
 			ManageInformation manageInformation = new ManageInformation();
 			manageInformation.setFileInput(path);
 			manageInformation.loadInformation(drone);
-			
+
 			String reporte = "== Reporte de entregas ==\n" + "(-2,4) dirección Occidente\n" + "(-1,3) dirección Sur\n"
 					+ "(0,0) dirección Occidente";
 
@@ -35,11 +37,11 @@ public class ReportTest {
 			deliveryService.deliveryLunchs(drone);
 			assertEquals(reporte, drone.getReport());
 		} catch (FormatException e) {
-			fail("Exception no expected");
+			fail(MESSAGE);
 		} catch (DeliveryException e) {
-			fail("Exception no expected");
+			fail(MESSAGE);
 		} catch (DataException e) {
-			fail("Exception no expected");
+			fail(MESSAGE);
 		}
 	}
 }

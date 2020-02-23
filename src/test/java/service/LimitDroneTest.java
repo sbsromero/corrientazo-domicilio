@@ -23,10 +23,9 @@ public class LimitDroneTest {
 
 			DeliveryServiceImp deliveryService = new DeliveryServiceImp();
 			deliveryService.validateMovement(nextPoint, 5);
-			fail("It waits for an exception");
+			fail("It's waits for an exception");
 		} catch (DeliveryException e) {
 			assertTrue(e.getMessage(), true);
 		}
-
 	}
 }
