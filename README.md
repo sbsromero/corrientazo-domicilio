@@ -6,7 +6,7 @@ Aplicacion lunchDrone para corrientazo a domicilio
 
 ## Estructura de la aplicación
 
-´´´
+```
 └───src
     └───lunchdrone
         ├───application
@@ -41,4 +41,4 @@ Aplicacion lunchDrone para corrientazo a domicilio
         │
         └───util											#utilidad para el manejo de la información
                 ManageInformation.java
-´´´
+```
