@@ -6,18 +6,17 @@ import java.util.List;
 import lunchDrone.domain.Drone;
 import lunchDrone.exception.DataException;
 import lunchDrone.factory.DroneFactory;
-import lunchDrone.util.ManageInformation;
 
 public class CreateDroneServiceImp implements CreateDroneService {
 
 	private List<Drone> avaliableDrones;
 	private DroneFactory droneFactory;
-	private ManageInformation loadInformation;
+	private LoadRouteMapService loadRouteMapService;
 
 	public CreateDroneServiceImp() {
-		this.loadInformation = new ManageInformation();
 		this.avaliableDrones = new ArrayList<>();
 		this.droneFactory = new DroneFactory();
+		this.loadRouteMapService = new LoadRouteMapServiceImp();
 	}
 
 	@Override
@@ -35,7 +34,7 @@ public class CreateDroneServiceImp implements CreateDroneService {
 	@Override
 	public void setDeliveryRoute() throws DataException {
 		for (Drone drone : avaliableDrones) {
-			loadInformation.loadInformation(drone, Integer.parseInt(drone.getIdDrone()));
+			loadRouteMapService.loadRoutesForDrone(drone);
 		}
 	}
 

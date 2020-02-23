@@ -5,5 +5,5 @@ import lunchDrone.exception.DataException;
 
 public interface LoadRouteMapService {
 
-	public void loadRoutesForDrone(Drone drone, String path) throws DataException;
+	public void loadRoutesForDrone(Drone drone) throws DataException;
 }

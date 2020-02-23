@@ -12,8 +12,7 @@ import lunchDrone.exception.FormatException;
 import lunchDrone.factory.DroneFactory;
 import lunchDrone.service.DeliveryService;
 import lunchDrone.service.DeliveryServiceImp;
-import lunchDrone.service.LoadRouteMapService;
-import lunchDrone.service.LoadRouteMapServiceImp;
+import lunchDrone.util.ManageInformation;
 
 public class ReportTest {
 
@@ -23,10 +22,12 @@ public class ReportTest {
 			DroneFactory droneFactory = new DroneFactory();
 			Drone drone = droneFactory.createDrone(3, 10);
 			drone.setIdDrone("1");
-			String path = "src/main/resources/input/init0" + drone.getIdDrone() + ".txt";
+			String path = "src/main/resources/input/";
 
-			LoadRouteMapService loadRouteMapService = new LoadRouteMapServiceImp();
-			loadRouteMapService.loadRoutesForDrone(drone, path);
+			ManageInformation manageInformation = new ManageInformation();
+			manageInformation.setFileInput(path);
+			manageInformation.loadInformation(drone);
+			
 			String reporte = "== Reporte de entregas ==\n" + "(-2,4) dirección Occidente\n" + "(-1,3) dirección Sur\n"
 					+ "(0,0) dirección Occidente";
 
